@@ -9,7 +9,7 @@ module.exports = {
   // 放在子目录时使用./或者加你的域名
   // publicPath: "./",
   // 关闭eslint检查
-  // lintOnSave: false,
+  lintOnSave: false,
   // 配置css前缀,px转rem
   css: {
     loaderOptions: {
