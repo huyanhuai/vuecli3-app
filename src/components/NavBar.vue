@@ -8,6 +8,7 @@
 </template>
 
 <script>
+// 导航组件
 export default {
     props: {
         title: {
