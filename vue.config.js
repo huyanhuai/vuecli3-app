@@ -43,6 +43,22 @@ module.exports = {
     }
   },
 
+  chainWebpack: config => {
+    config.entry.app = ['babel-polyfill', './src/main.js'];
+    // 对vue-cli内部的 webpack 配置进行更细粒度的修改
+    config.optimization.minimizer('terser').tap((args) => {
+        // 去除生产环境console
+        args[0].terserOptions.compress.drop_console = true
+        return args
+    })
+    // 最小化代码
+    config.optimization.minimize(true);
+    // 分割代码
+    config.optimization.splitChunks({
+        chunks: 'all'
+    });
+  },
+
   configureWebpack: {
     externals: {
       axios: "axios" // 配置使用CDN
