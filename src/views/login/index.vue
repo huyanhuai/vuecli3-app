@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import { constants } from "crypto";
 export default {
   data() {
     return {
